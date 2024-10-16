@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+<head>
+    <title>{{ title ?? site:name }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ vite src="resources/css/app.css|resources/js/app.js"  }}
+</head>
+<body class="bg-white text-lg font-mono">
+    <nav class="bg-black text-xs uppercase text-green text-center flex items-center justify-center space-x-4">
+        {{ nav from="main_nav" include_home="true" }}
+            <a href="{{ url }}" class="p-2 block hover:text-yellow-200">{{ title }}</a>
+        {{ /nav  }}
+    </nav>
+    <div class="container max-w-lg mx-auto py-8">
+        {{ template_content }}
+    </div>
+</body>
+</html>
