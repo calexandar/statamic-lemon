@@ -3,3 +3,11 @@ tree:
     id: 4da7eb1f-ca29-4796-b4f0-d4f958b8f567
     title: Home
     url: /
+  -
+    id: c7e36260-2fa4-4c36-bba5-404a126dc974
+    title: Blog
+    url: /blog
+  -
+    id: 8bee72e3-88a1-4fff-a776-bad063c08805
+    title: Other
+    url: /other
