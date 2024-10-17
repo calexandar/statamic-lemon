@@ -1,0 +1,15 @@
+<nav class="py-12 max-w-4xl mx-auto">
+    <div class="flex items-center justify-between">
+        <a class="font-bold text-2xl" href="/">Screencasting</a>
+        <ul class="flex items-center space-x-8 font-semibold">
+            {{ nav:collection:pages }}
+            <li><a href="{{ url }}" class="py-4 block {{ is_current || is_parent ?= 'text-red-700' }}">{{ title }}</a></li>
+            {{ /nav:collection:pages }}
+        </ul>
+    </div>
+    <ul class="bg-black text-white flex items-center space-x-8">
+        {{ nav:collection:pages :from="segment_1" }}
+        <li><a href="{{ url }}" class="py-4 block">{{ title }}</a></li>
+        {{ /nav:collection:pages }}
+    </ul>
+</nav>

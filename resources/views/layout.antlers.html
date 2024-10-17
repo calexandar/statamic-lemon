@@ -7,13 +7,8 @@
     {{ vite src="resources/css/app.css|resources/js/app.js"  }}
 </head>
 <body class="bg-white text-lg font-mono">
-    <nav class="bg-black text-xs uppercase text-green text-center flex items-center justify-center space-x-4">
-        {{ nav from="pages" include_home="true" }}
-            <a href="{{ url }}" class="p-2 block text-white hover:text-yellow-200">{{ title }}</a>
-        {{ /nav  }}
-    </nav>
-    <div class="container max-w-lg mx-auto py-8">
+        {{ partial:nav }}
         {{ template_content }}
-    </div>
+
 </body>
 </html>
