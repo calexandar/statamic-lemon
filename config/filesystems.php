@@ -57,6 +57,12 @@ return [
             'throw' => false,
         ],
 
+        'assets' => [
+            'driver' => 'local',
+            'root' => public_path('assets'),
+            'url' => '/assets',
+            'visibility' => 'public', // (more info about visibility below)
+        ],
     ],
 
     /*

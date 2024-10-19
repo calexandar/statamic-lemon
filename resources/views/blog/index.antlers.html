@@ -1,20 +1,28 @@
 <div class="max-w-4xl mx-auto">
     <h1 class="text-8xl font-black text-center">{{ title }}</h1>
-    <div class="grid grid-flow-col grid-cols-2 gap-8 mt-16">
-        {{ collection:blog }}
-        <a href="" class="w-full h-full border-gray-400 shadow hover:shadow-lg transition rounded">
-            <img src="{{ featured_image }}" alt="{{ featured_image:alt }}" class="rounded-t">
-            <article class="p-4">
-                <div class="flex items-center">
-                    <img src="{{ author:avatar }}" alt="" class="h-12 w-12 rounded-full">
-                    <div class="leading-tight ml-3">
-                        <p class="font-bold">{{ author:name }}</p>
-                        <p class="text-sm text-gray-600">{{ date }}</p>
-                    </div>
+        {{ collection:blog paginate="4" as="posts" }}
+            <div class="grid grid-flow-col grid-cols-2 gap-8 my-16">
+                {{ posts }}
+                    <a href="{{ url }}" class="w-full h-full border-gray-400 shadow hover:shadow-lg transition rounded">
+                        <img src="{{ featured_image }}" alt="{{ featured_image:alt }}" class="rounded-t">
+                        <article class="p-4">
+                            <div class="flex items-center">
+                                <img src="{{ author:avatar }}" alt="" class="h-12 w-12 rounded-full">
+                                <div class="leading-tight ml-3">
+                                    <p class="font-bold">{{ author:name }}</p>
+                                    <p class="text-sm text-gray-600">{{ date }}</p>
+                                </div>
+                            </div>
+                            <h2 class="text-2xl font-bold leading-tight mt-4">{{ title }}</h2>
+                        </article>
+                    </a>
+                {{ /posts }}
+            </div>
+            {{ paginate }}
+                <div class="flex mx-auto items-center justify-center space-x-8">
+                    <a href="{{ prev_page }}">Previous</a>
+                    <a href="{{ next_page }}">Next</a>
                 </div>
-                <h2 class="text-2xl font-bold leading-tight mt-4">{{ title }}</h2>
-            </article>
-        </a>
+            {{ /paginate }}
         {{ /collection:blog }}
-    </div>
 </div>

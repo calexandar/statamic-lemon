@@ -6,6 +6,6 @@ author:
   - 1
 template_field: blog/index
 updated_by: 1
-updated_at: 1729071070
+updated_at: 1729370972
 ---
 This is our blog stuff.
