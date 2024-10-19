@@ -9,7 +9,9 @@
     </div>
     <ul class="bg-black text-white flex items-center space-x-8">
         {{ nav:collection:pages :from="segment_1" }}
-        <li><a href="{{ url }}" class="py-4 block">{{ title }}</a></li>
+            {{ if ! no_results }}
+            <li><a href="{{ url }}" class="py-4 block">{{ title }}</a></li>
+            {{ /if }}
         {{ /nav:collection:pages }}
     </ul>
 </nav>

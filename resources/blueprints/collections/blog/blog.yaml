@@ -12,15 +12,35 @@ tabs:
               validate:
                 - required
           -
-            handle: featured
+            handle: featured_image
             field:
-              type: toggle
-              display: Featured
+              max_files: 1
+              container: assets
+              type: assets
+              display: Featured_image
           -
-            handle: content
+            handle: blog_content
             field:
-              type: markdown
-              localizable: true
+              buttons:
+                - h2
+                - h3
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - quote
+                - anchor
+                - image
+                - table
+                - strikethrough
+                - code
+                - codeblock
+              reading_time: true
+              remove_empty_nodes: false
+              container: assets
+              type: bard
+              display: 'Blog content'
           -
             handle: author
             field:
@@ -31,6 +51,21 @@ tabs:
             field:
               type: template
               display: Template
+      -
+        display: Meta
+        fields:
+          -
+            handle: meta_title
+            field:
+              character_limit: 60
+              type: text
+              display: 'Meta title'
+          -
+            handle: meta_description
+            field:
+              character_limit: 160
+              type: textarea
+              display: 'Meta description'
   sidebar:
     display: Sidebar
     sections:
