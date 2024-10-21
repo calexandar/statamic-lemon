@@ -1,6 +1,8 @@
-<h1 class="text-2xl font-bold my-6">Welcome to my CyberSpace Place!</h1>
-{{ content }}
+<h1 class="text-2xl font-bold my-6">{{ title }}</h1>
+<h1 class="text-2xl font-bold my-6">{{ subtitle }}</h1>
+<h1 class="text-2xl font-bold my-6">{{ teaser }}</h1>
+{{# {{ content }}
 {{ partial:blog/listing limit="5" }}
     <h2 class="p-5">Recent Blog Posts</h2>
-{{ /partial:blog/listing }}
+{{ /partial:blog/listing }} #}}
 

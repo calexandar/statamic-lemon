@@ -1,0 +1,62 @@
+title: Landing
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: subtitle
+            field:
+              type: markdown
+              display: Subtitle
+          -
+            handle: teaser
+            field:
+              type: text
+              display: Teaser
+          -
+            handle: lighting_bolts
+            field:
+              default: true
+              type: toggle
+              display: 'Lighting bolts'
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: date
+            field:
+              type: date
+              default: now
+              validate:
+                - required
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
