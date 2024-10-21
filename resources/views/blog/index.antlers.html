@@ -1,7 +1,7 @@
 <div class="max-w-4xl mx-auto">
     <h1 class="text-8xl font-black text-center">{{ title }}</h1>
         {{ collection:blog paginate="4" as="posts" }}
-            <div class="grid grid-flow-col grid-cols-2 gap-8 my-16">
+            <div class="grid  grid-cols-2 gap-8 my-16">
                 {{ posts }}
                     <a href="{{ url }}" class="w-full h-full border-gray-400 shadow hover:shadow-lg transition rounded">
                         <img src="{{ featured_image }}" alt="{{ featured_image:alt }}" class="rounded-t">
