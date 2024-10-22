@@ -12,15 +12,26 @@ tabs:
               validate:
                 - required
           -
-            handle: content
-            field:
-              type: markdown
-              localizable: true
-          -
             handle: author
             field:
+              max_items: 1
               type: users
               display: Author
+          -
+            handle: featured_image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'Featured image'
+          -
+            handle: article_content
+            field:
+              reading_time: true
+              remove_empty_nodes: false
+              container: assets
+              type: bard
+              display: 'Article content'
           -
             handle: template
             field:
@@ -38,12 +49,11 @@ tabs:
               localizable: true
               validate: 'max:200'
           -
-            handle: parent
+            handle: date
             field:
-              type: entries
-              collections:
-                - pages
-              max_items: 1
-              listable: false
-              localizable: true
-title: Page
+              type: date
+              required: true
+              default: now
+              validate:
+                - required
+title: 'News Article'
