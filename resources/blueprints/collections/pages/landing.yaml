@@ -33,6 +33,54 @@ tabs:
             field:
               type: template
               display: Template
+          -
+            handle: panels
+            field:
+              type: replicator
+              display: Panels
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: panel_image
+                          field:
+                            max_files: 1
+                            container: assets
+                            type: assets
+                            display: 'Panel image'
+                        -
+                          handle: panel_teaser
+                          field:
+                            type: text
+                            display: 'Panel teaser'
+                        -
+                          handle: panel_heading
+                          field:
+                            type: text
+                            display: 'Panel heading'
+                        -
+                          handle: panel_content
+                          field:
+                            type: markdown
+                            display: 'Panel content'
+                        -
+                          handle: cta_text
+                          field:
+                            type: text
+                            display: 'CTA text'
+                            width: 50
+                        -
+                          handle: cta_link
+                          field:
+                            collections:
+                              - pages
+                            type: link
+                            display: 'CTA link'
+                            width: 50
   sidebar:
     display: Sidebar
     sections:
