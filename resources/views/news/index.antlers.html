@@ -18,7 +18,9 @@
                         <p>{{ date }}</p>
                         <p class="text-sm">By <a href="" class="text-gray-700 hover:text-black">{{ author:name }}</a></p>
                     </div>
-                    <a href="" class="px-3 py-1 text-gray-100 font-bold bg-yellow-300 transition hover:bg-orange-400 rounded-full">News</a>
+                    {{ tags }}
+                        <a href="{{ url }}" class="px-3 py-1 text-gray-100 font-bold bg-yellow-300 transition hover:bg-orange-400 rounded-full">{{ title }}</a>
+                    {{ /tags }}
                 </div>
             </div>
         </div>
