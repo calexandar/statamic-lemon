@@ -3,15 +3,24 @@
         <a class="font-bold text-2xl" href="/">Screencasting</a>
         <ul class="flex items-center space-x-8 font-semibold">
             {{ nav:collection:pages }}
-            <li><a href="{{ url }}" class="py-4 block {{ is_current || is_parent ?= 'text-red-700' }}">{{ title }}</a></li>
+                {{ if ! children }}
+                    <li><a href="{{ url }}" class="py-4 block {{ is_current || is_parent ?= 'text-red-700' }}">{{ title }}</a></li>
+                {{ else }}
+                    <li class="group">
+                        <button class="p-2 relative flex items-center hove:text-black transition">
+                            <span>{{ title }}</span>
+                            <span class="ml-2">></span>
+                        </button>
+                        <div class="absolute rounded-lg py-4 -mt-2 px-2 bg-gray-200 hidden group-hover:block">
+                            <ul class="flex flex-col">
+                                {{ children }}
+                                    <li><a href="{{ url }}" class="py-2 px-4 block transition hover:bg-gray-300 rounded hover:text-black">{{ title }}</a></li>
+                                {{ /children }}
+                            </ul>
+                        </div>
+                    </li>
+                {{ /if }}
             {{ /nav:collection:pages }}
         </ul>
     </div>
-    <ul class="bg-black text-white flex items-center space-x-8">
-        {{ nav:collection:pages :from="segment_1" }}
-            {{ if ! no_results }}
-            <li><a href="{{ url }}" class="py-4 block">{{ title }}</a></li>
-            {{ /if }}
-        {{ /nav:collection:pages }}
-    </ul>
 </nav>

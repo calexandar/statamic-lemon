@@ -1,0 +1,21 @@
+<div class="rounded-xl h-[500px] group bg-gray-200 flex flex-col hover:scale-105 transition duration-[400ms] ease-in-out">
+    <a href="{{ url }}" class="relative overflow-hidden rounded-t-xl">
+        <img src="{{ glide :src="featured_image" width="600px" height="400px" fit="crop_focal" }}" alt="{{ featured_image:alt }}">
+    </a>
+    <div class="px-6 py-6 flex flex-col justify-between flex-1">
+        <h3 class="font-bold text-2xl text-black">
+            <a href="#">{{ title }}</a>
+        </h3>
+        <div class="flex items-end justify-between">
+            <div>
+                <p>{{ date }}</p>
+                <p class="text-sm">By <a href="" class="text-gray-700 hover:text-black">{{ author:name }}</a></p>
+            </div>
+            {{ if ! hide_tag }}
+                {{ tags }}
+                    <a href="{{ url }}" class="px-3 py-1 text-gray-100 font-bold bg-yellow-300 transition hover:bg-orange-400 rounded-full">{{ title }}</a>
+                {{ /tags }}
+            {{ /if }}
+        </div>
+    </div>
+</div>

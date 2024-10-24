@@ -1,0 +1,11 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: new_window
+            field:
+              type: toggle
+              display: 'Open in new window'

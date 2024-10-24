@@ -1,0 +1,15 @@
+tree:
+  -
+    id: 17bfbc8b-0055-4b8d-8cfa-86abe6ae5db6
+    title: 'Cool CMS'
+    url: 'https://becutan.mk'
+    data:
+      new_window: true
+  -
+    id: 1386071d-2ef1-4328-b252-c2587e97f6d9
+    title: 'Nice items'
+    url: 'https://alex-web.mk'
+  -
+    id: ca0e397a-9a4e-4dde-8767-286ecc6223d9
+    title: 'The dolrian'
+    url: /news
