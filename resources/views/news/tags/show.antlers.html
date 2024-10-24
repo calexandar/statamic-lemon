@@ -1,0 +1,28 @@
+<header class="my-12 md:my-16 lg:my-24 text-center">
+    <p class="text-green-400 font-bold text-lg antialiased mb-4">Articles</p>
+    <h1 class="text-6xl md:text-7xl lg:text-8xl text-black font-bold">{{ title }}</h1>
+</header>
+
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto gap-x-8 gap-y-16 px-4">
+    {{ collection:news }}
+        <div class="rounded-xl h-[500px] group bg-gray-200 flex flex-col hover:scale-105 transition duration-[400ms] ease-in-out">
+            <a href="{{ url }}" class="relative overflow-hidden rounded-t-xl">
+                <img src="{{ featured_image }}" alt="{{ featured_image:alt }}">
+            </a>
+            <div class="px-6 py-6 flex flex-col justify-between flex-1">
+                <h3 class="font-bold text-2xl text-black">
+                    <a href="#">{{ title }}</a>
+                </h3>
+                <div class="flex items-end justify-between">
+                    <div>
+                        <p>{{ date }}</p>
+                        <p class="text-sm">By <a href="" class="text-gray-700 hover:text-black">{{ author:name }}</a></p>
+                    </div>
+                    {{ tags }}
+                        <a href="{{ url }}" class="px-3 py-1 text-gray-100 font-bold bg-yellow-300 transition hover:bg-orange-400 rounded-full">{{ title }}</a>
+                    {{ /tags }}
+                </div>
+            </div>
+        </div>
+    {{ /collection:news }}
+</section>
