@@ -23,4 +23,33 @@
             {{ /nav:collection:pages }}
         </ul>
     </div>
+    <div class="flex items-center space-x-4 px-2">
+        <div x-data="{ showSearch: false, searchQuery: '', searchResults:''}" @keydown.escape="showSearch = (searchQuery != '')">
+            <button type="button" @click.prevent="showSearch = true" class="hidden md:flex items-center py-2 px-4 group text-gray-500 hover:text-black transition font-medium">
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 fill-gray-500 hover:fill-gray-900"><path d="M20.47 21.53a.75.75 0 1 0 1.06-1.06l-1.06 1.06Zm-9.97-4.28a6.75 6.75 0 0 1-6.75-6.75h-1.5a8.25 8.25 0 0 0 8.25 8.25v-1.5ZM3.75 10.5a6.75 6.75 0 0 1 6.75-6.75v-1.5a8.25 8.25 0 0 0-8.25 8.25h1.5Zm6.75-6.75a6.75 6.75 0 0 1 6.75 6.75h1.5a8.25 8.25 0 0 0-8.25-8.25v1.5Zm11.03 16.72-5.196-5.197-1.061 1.06 5.197 5.197 1.06-1.06Zm-4.28-9.97c0 1.864-.755 3.55-1.977 4.773l1.06 1.06A8.226 8.226 0 0 0 18.75 10.5h-1.5Zm-1.977 4.773A6.727 6.727 0 0 1 10.5 17.25v1.5a8.226 8.226 0 0 0 5.834-2.416l-1.061-1.061Z"></path></svg>
+                <span>Search</span>
+            </button>
+            <div
+                class="fixed p-[12vh] inset-0 z-30 backdrop-blur-sm flex flex-col overflow-auto bg-black bg-opacity-50"
+                x-cloak
+                x-transition.opacity
+                x-show="showSearch"
+                x-trap.noscroll="showSearch"
+                >
+                <div
+                    class="mx-auto text-left bg-gray-200 rounded-lg max-w-3xl"
+                    click.away="showSearch = false"
+                    x-transition
+                    @click.outside="showSearch = false"
+                >
+                    <form action="search" class="p-2 flex items-center px-6">
+                        <svg fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 fill-gray-500 hover:fill-gray-900"><path d="M20.47 21.53a.75.75 0 1 0 1.06-1.06l-1.06 1.06Zm-9.97-4.28a6.75 6.75 0 0 1-6.75-6.75h-1.5a8.25 8.25 0 0 0 8.25 8.25v-1.5ZM3.75 10.5a6.75 6.75 0 0 1 6.75-6.75v-1.5a8.25 8.25 0 0 0-8.25 8.25h1.5Zm6.75-6.75a6.75 6.75 0 0 1 6.75 6.75h1.5a8.25 8.25 0 0 0-8.25-8.25v1.5Zm11.03 16.72-5.196-5.197-1.061 1.06 5.197 5.197 1.06-1.06Zm-4.28-9.97c0 1.864-.755 3.55-1.977 4.773l1.06 1.06A8.226 8.226 0 0 0 18.75 10.5h-1.5Zm-1.977 4.773A6.727 6.727 0 0 1 10.5 17.25v1.5a8.226 8.226 0 0 0 5.834-2.416l-1.061-1.061Z"></path></svg>
+                        <input name="q" type="text" ref="searchInput" x-model="searchQuery" class="bg-transparent w-full text-black inline-block py-2 focus:outline-none">
+                        <button type="button" class="text=2xs tracking-wider bg-gray-300 px-1 py-px rounded-sm hover:text-black" @click.prevent="showSearch = false">ESC</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </nav>
