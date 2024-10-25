@@ -32,6 +32,53 @@ tabs:
               container: assets
               type: bard
               display: 'Article content'
+              sets:
+                quote:
+                  display: Quote
+                  sets:
+                    quote:
+                      display: Quote
+                      fields:
+                        -
+                          handle: bard_field
+                          field:
+                            buttons:
+                              - bold
+                              - italic
+                              - unorderedlist
+                              - orderedlist
+                            save_html: true
+                            toolbar_mode: floating
+                            remove_empty_nodes: false
+                            link_noopener: true
+                            link_noreferrer: true
+                            target_blank: true
+                            type: bard
+                            display: 'Bard Field'
+                        -
+                          handle: author
+                          field:
+                            type: text
+                            display: Author
+                    related_article:
+                      display: 'Related article'
+                      fields:
+                        -
+                          handle: related_entries
+                          field:
+                            create: false
+                            type: entries
+                            display: 'Related entries'
+                    embeded:
+                      display: Embeded
+                      fields:
+                        -
+                          handle: embeded_template
+                          field:
+                            hide_partials: false
+                            folder: partials
+                            type: template
+                            display: 'Embeded template'
           -
             handle: template
             field:
@@ -56,4 +103,12 @@ tabs:
               default: now
               validate:
                 - required
+          -
+            handle: tags
+            field:
+              type: terms
+              taxonomies:
+                - tags
+              display: Tags
+              mode: select
 title: 'News Article'

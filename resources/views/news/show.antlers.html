@@ -19,5 +19,18 @@
 
     <section class="max-w-3xl mx-auto mt-12 content article">
        {{ article_content }}
+       {{ if type == "text" }}
+        {{ text }}
+       {{ elseif type == "quote" }}
+        <div class="quote-block">
+            &ldquo;{{ bard_field }}&ldquo;
+            <div class="italic mt-4">&dash;  {{ author }}</div>
+        </div>
+        {{ elseif type == "related_article" }}
+        <a href="{{ url }}" class="related-block mt-5">{{ title }}</a>
+        {{# {{ elseif type == "embeded" }}
+            {{ partial :src="emebeded_template" }} #}}
+       {{ /if }}
+       {{ /article_content }}
     </section>
 </article>
