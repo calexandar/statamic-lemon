@@ -23,6 +23,11 @@
 </section>
 
 <footer>
+    <div>
+        {{ quote = {quote_fetcher author="Ron Swanson"} | limit(1)}}
+            <p>{{ value }}</p>
+        {{ /quote }}
+    </div>
     <div class="lg:pl-12">
         <nav class="text-lg antialiased -ml-1">
             <ul>
