@@ -10,7 +10,8 @@
         "laravel/tinker": "^2.9",
         "lemonsqueezy/laravel": "^1.7",
         "statamic/cms": "^5.31",
-        "statamic/eloquent-driver": "^4.15"
+        "statamic/eloquent-driver": "^4.15",
+        "statamic/ssg": "^3.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
