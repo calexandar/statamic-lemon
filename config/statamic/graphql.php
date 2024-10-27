@@ -14,12 +14,12 @@ return [
     |
     */
 
-    'enabled' => env('STATAMIC_GRAPHQL_ENABLED', false),
+    'enabled' => true,
 
     'resources' => [
-        'collections' => false,
+        'collections' => true,
         'navs' => false,
-        'taxonomies' => false,
+        'taxonomies' => true,
         'assets' => false,
         'globals' => false,
         'forms' => false,
